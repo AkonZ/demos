@@ -13,5 +13,5 @@ require.config({
 });
 
 require(['jquery','log'], function ($,log) {
-    log.write('测试测试！！！');
+    log.writeLog('测试测试！！！');
 });
