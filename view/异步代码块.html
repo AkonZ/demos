@@ -1,0 +1,21 @@
+<html>
+<head>
+<meta charset='utf8'>
+    <script type="text/javascript">
+        setTimeout(function(){
+            var div1 = document.getElementById('event1');
+            console.log(div1);
+        },0);
+        document.addEventListener('DOMContentLoaded',function(){
+            var div1 = document.getElementById('event1');
+            console.log(div1);
+        },false);
+    </script>
+    <script type="text/javascript">
+        for(var x=0;x<5e8;x++){}//模拟占用大大大量时间js代码
+    </script>
+</head>
+<body>
+<div id="event1" style="width: 100px;height: 100px;background-color: #e0e0e0;"></div>
+</body>
+</html> 

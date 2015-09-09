@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" id="btn" value="btn"/>
+<script>
+    var btn = document.querySelector('#btn');
+    btn.onclick = function(){
+        alert(11);
+    }
+    var ev = document.createEvent('MouseEvents');
+//    ev.initMouseEvent('click',true,true,document.defaultView,0,0,0,0,0,false,false,false,false,0,null);
+    ev.initMouseEvent('click');
+    btn.dispatchEvent(ev);
+</script>
+</body>
+</html>

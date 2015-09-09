@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>点透问题重现</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: #ffe87c;
+        }
+        .shadow{
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #00193a;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="d1"></div>
+    <div class="shadow" id="d2"></div>
+    <a href="http://www.baidu.com" id="d3">sjsssjjsjs</a>
+    <script>
+        var box = document.getElementById('d1'),
+            shadow = document.getElementById('d2'),
+            a = document.getElementById('d3');
+        box.addEventListener('click',function(ev){
+            console.log('box');
+            console.log(ev.target);
+        },false);
+        shadow.addEventListener('touchstart',function(ev){
+            console.log(ev.type);
+            console.log(+new Date());
+        },false);
+        shadow.addEventListener('touchmove',function(ev){
+            console.log(ev.type);
+        },false);
+        shadow.addEventListener('touchend',function(ev){
+            console.log(ev.type);
+        },false)
+        shadow.addEventListener('click',function(ev){
+            console.log(ev.type);
+            console.log(+new Date());
+        },false);
+        shadow.addEventListener('mousedown',function(ev){
+            console.log(ev.type);
+        },false);
+        shadow.addEventListener('mouseup',function(ev){
+            console.log(ev.type);
+        },false);
+
+        a.addEventListener('mousedown',function(ev){
+            console.log(ev.type);
+        },false);
+
+        a.addEventListener('mouseup',function(ev){
+            console.log(ev.type);
+        },false);
+
+        a.addEventListener('click',function(ev){
+            console.log(ev.type);
+            ev.preventDefault();
+        },false);
+    </script>
+</body>
+</html>

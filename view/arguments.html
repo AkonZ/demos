@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 代码①
+    function Person(name) {
+        this._name = name;
+    }
+
+    Person.prototype.getName = function() {
+        return this._name;
+    }
+
+    Person.prototype.walk = function() {
+        console.log('${this.getName()} is walking');
+    }
+
+    var james = new Person("James");
+//    james.walk();
+    var jack = new Person("Jack");
+//    jack.walk();
+    james.walk = function() {
+        console.log('${this.getName()} walking ... done');
+    }
+
+    james.walk();
+    jack.walk();
+
+    delete james.walk;
+    james.walk();
+</script>
+</body>
+</html>

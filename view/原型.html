@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    var P = function(){
+        this.name = '123';
+    }
+    P.prototype.getName = function(){
+        return this.name;
+    }
+    var Q = {};
+    Q.prototype = new P();
+
+    console.log(Q);
+</script>
+</body>
+</html>

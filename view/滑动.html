@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>移动端滑动</title>
+    <style>
+        #box{
+            height: 200px;
+            /*overflow-x: scroll;*/
+            white-space: nowrap;
+        }
+        #box div{
+            display: inline-block;
+            width: 50px;
+            height: 200px;
+            background-color: #add8e6;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body onbeforeunload="console.log('usoad')">
+<div id="box">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <input type="text" name="" id=""/>
+</div>
+<script>
+//    var box = document.getElementById('box');
+//    var df = document.createDocumentFragment();
+//    for(var i = 4;i < 100;i++){
+//        var li = document.createElement('div');
+//        li.appendChild(document.createTextNode(i));
+//        df.appendChild(li);
+//    }
+//    box.appendChild(df);
+//    box.addEventListener('touchstart',function(ev){
+//        console.log('start',ev.touches[0].pageX);
+//    },false)
+//    box.addEventListener('touchmove',function(ev){
+//        console.log(ev.touches[0].pageX);
+//    },false);
+//    box.addEventListener('touchend',function(ev){
+//        console.log(ev);
+//    },false);
+//    window.onunload = function(){
+//        alert('unload');
+//    };
+
+     box.addEventListener('focusout',function(ev){
+        console.log(ev.target);
+        console.log(this);
+     },false);
+</script>
+
+</body>
+</html>

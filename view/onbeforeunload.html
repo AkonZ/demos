@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+//    var checkValue={};
+//    checkValue.arr1=[];
+//    checkValue.arr2=[];
+//
+//    function check(arr){
+//        var inputs=document.getElementsByTagName('input');
+//        var textArea=document.getElementsByTagName('textarea');
+//        for(var i= 0;i<inputs.length;i++){
+//            if(inputs[i].type==='text'){arr.push(inputs[i].value)}
+//            if(inputs[i].type==='radio' || inputs[i].type==='checkbox'){arr.push(inputs[i].checked)}
+//        }
+//        for(var i=0;i<textArea.length;i++){
+//            arr.push(textArea[i].innerHTML);
+//        }
+//    }
+//    //页面加载完毕，先获得所有表单数据值并储存在checkValue.arr1。
+//    window.onload= function () {
+//        check(checkValue.arr1);
+//    };
+    //页面离开时，获得所有表单数据值并储存在checkValue.arr2。再进行数据比较，判断是否修改了数据
+    window.onbeforeunload = function (ev) {
+//        alert(1);
+//        var ev = ev||window.event;
+//        ev.returnValue = 'smsksls';
+        return 'ssss';
+//        check(checkValue.arr2);
+//        console.log(checkValue.arr2)
+//        if (checkValue.arr1.toString()!== checkValue.arr2.toString()) {
+//            return "changed"
+//        }
+    };
+//    document.onbeforeunload = function(){
+//        alert(222);
+//    }
+</script>
+</body>
+</html>

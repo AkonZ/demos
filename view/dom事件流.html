@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box1{
+            width: 400px;
+            height: 400px;
+            background-color: #ffe87c;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: #add8e6;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <div id="box2"></div>
+    </div>
+    <script>
+        var box1 = document.getElementById('box1'),
+            box2 = document.getElementById('box2');
+        box2.addEventListener('click',function(ev){
+            console.log(ev);
+            console.log(ev.target);
+            console.log('----捕获1----');
+            console.log(ev.eventPhase);
+        },true);
+        box1.addEventListener('click',function(ev){
+            console.log(ev.target);
+            console.log('----捕获2----');
+            console.log(ev.eventPhase);
+//            ev.stopPropagation();
+        },true);
+        box2.addEventListener('click',function(ev){
+            console.log(ev.target);
+            console.log('----冒泡1----');
+            console.log(ev.eventPhase);
+        },false);
+        box1.addEventListener('click',function(ev){
+            console.log(ev.target);
+            console.log('----冒泡2----');
+            console.log(ev.eventPhase);
+        },false);
+    </script>
+</body>
+</html>

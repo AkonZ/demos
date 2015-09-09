@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<label>
+    <input type="checkbox" name="test" id="cb"/>男
+</label>
+<label>
+    <input type="checkbox" name="test" id="ca"/>女
+</label>
+<script>
+//    "use strict";
+    var cb = document.getElementById('cb'),
+        tt = document.getElementById('tt');
+    cb.click(function(){
+        alert(11);
+    });
+
+//    cb.click = function(){
+//        ev.preventDefault();
+//    }
+
+//    tt.addEventListener('contextmenu',function(){
+//        return false;
+////        alert(111);
+//    },false)
+    //如果直接用sum(x-1) + sum(x-2),如果sum被改名，或者重新赋值，产生bug
+//    var sum = function fSum(x){
+//        if(x<=2)
+//            return 1;
+//        else
+//            return fSum(x-1) + fSum(x-2);
+//    };
+//        var sum = function(x){
+//            if(x<=2)
+//                return 1;
+//            else
+//                return arguments.callee() + fSum(x-2);
+//        };
+//    alert(sum(5));
+</script>
+</body>
+</html>

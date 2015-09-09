@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" id="un" style="font-size: 40px;width: 200px;height: 40px;"/>
+<script>
+    var un = document.getElementById('un');
+    un.addEventListener('input',function(){
+        var len = this.value.length/1;
+        un.style.fontSize =  40 *1/len + 'px';
+    },false);
+</script>
+</body>
+</html>

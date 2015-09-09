@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../css/resetnew-min.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <style>
+        .box{
+            float: left;
+            width: 6rem;
+            height: 6rem;
+            font-size: 0.8rem;
+            background-color: lightgoldenrodyellow;
+        }
+        .adapt{
+            height: 6rem;
+            overflow: hidden;
+            background-color: #add8e6;
+        }
+    </style>
+</head>
+<body>
+    <input value="Array"/>
+    <!--<div class="box">文字文字文字文字文字文字文字文字</div>-->
+    <!--<div class="adapt"></div>-->
+    <!--<span>好好氨基酸不是不是</span>-->
+    <a href="demo2.html">连接</a>
+    <script src="../js/eventUtil.js"></script>
+    <script>
+        EventUtil.addHandler(window,'load',function(){
+            console.log('load');
+        });
+        EventUtil.addHandler(window,'pageshow',function(ev){
+            console.log('pageShow',ev.persisted);
+        })
+    </script>
+</body>
+</html>
