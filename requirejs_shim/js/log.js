@@ -1,3 +1,5 @@
-function writeLog(x){
-    document.write(x);
+window.log = {
+    writeLog: function(x){
+        document.write(x);
+    }
 }

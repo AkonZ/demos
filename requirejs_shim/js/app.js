@@ -12,6 +12,6 @@ require.config({
     }
 });
 
-require(['jquery','log'], function ($,log) {
-    log.writeLog('测试测试！！！');
+require(['jquery','log'], function ($,logx) {
+    logx.writeLog('测试测试！！！');
 });
