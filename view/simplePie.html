@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="canvas1"></canvas>
+
+<canvas id="canvas2" style="margin-left: 100px"></canvas>
+
+<script>
+    //简易饼状图
+    (function(){
+        function Spc(canvas){
+            this.options = {
+                R: 90,//半径
+                innerR: 80,//内半径
+                currentNumber: 40,
+                totalNumber: 100,
+                color: '#ff744d',
+                fontSize: 18
+            };
+            this.canvas = document.getElementById(canvas);
+        }
+
+        Spc.fn = Spc.prototype;
+
+        Spc.fn.init = function(canvas){
+            this.canvas = document.getElementById(canvas);
+            return this;
+        }
+        //绘制扇形
+        Spc.fn.drawCircle = function(){
+            var ctx = this.ctx,
+                arc = this.arc;
+            ctx.beginPath();
+            ctx.arc(arc.x, arc.y,arc.radius, arc.startAngle,arc.endAngle,false);
+            ctx.lineWidth =  arc.lineWidth;
+            ctx.strokeStyle = arc.color;
+            ctx.stroke();
+        }
+
+        Spc.fn.setOption = function(opt){
+            this.extend(this.options,opt);
+
+            // canvas自身的width扩大四倍，其css样式width保持不变.实际显示的宽度也会保持不变，减少图像，文字的锯齿感和模糊度
+            var R = this.options.R * 4,
+                innerR = this.options.innerR * 4,//内半径
+                Rx = R - innerR,//环的半径
+                canvasWidth = R * 2,
+                canvas = this.canvas;
+
+            canvas.setAttribute('width',canvasWidth + 'px');
+            canvas.setAttribute('height',canvasWidth + 'px');
+            canvas.style.width = canvasWidth / 4 + 'px';
+            canvas.style.hight = canvasWidth / 4 + 'px';
+
+            var ctx = null;
+            if (canvas.getContext) {
+                ctx = canvas.getContext('2d');
+            }
+
+            this.ctx = ctx;
+            //绘制扇形图属性
+            this.arc = {
+                x: 0, //圆心x坐标
+                y: 0, //圆心y坐标
+                radius: innerR, //半径
+                startAngle: 0,//起始角度
+                endAngle: Math.PI*2,//结束角度，
+                color: '#f7f7f7',//环的颜色,
+                lineWidth: Rx//环的半径
+            };
+
+            ctx.translate(canvasWidth/2,canvasWidth/2);
+            this.drawCircle();
+
+
+            //绘制文本
+            ctx.font = this.options.fontSize *4  + "px Calibri";
+            ctx.textAlign = "center";
+            ctx.fillStyle = this.options.color;
+            ctx.fillText(this.options.currentNumber + '', 0, this.options.fontSize * 2);
+
+            this.arc.color = this.options.color;
+            var percentage = Math.round(this.options.currentNumber/this.options.totalNumber*1000) / 1000;
+            this.arc.startAngle = Math.PI*3/2;
+//            this.arc.endAngle = Math.PI*(3/2 + percentage * 2);
+            this.arc.endAngle = this.arc.startAngle + Math.PI*2*percentage;
+
+            this.drawCircle();
+
+            return this;
+        }
+
+        //对象深拷贝
+        Spc.fn.extend = function(copyTo,copyFrom){
+            for(var key in copyFrom){
+                if(copyFrom[key])
+                    copyTo[key] = copyFrom[key];
+            }
+        }
+
+        window.SimplePieChart = Spc;
+    })(window);
+
+
+    var spc1 = new SimplePieChart('canvas1');
+    spc1.setOption({
+        R: 90,//半径
+        innerR: 80,//内半径
+        currentNumber: 40,
+        totalNumber: 100,
+        color: '#ff744d',
+        fontSize: 18
+    });
+
+    var spc2 = new SimplePieChart('canvas2');
+    spc2.setOption({
+        R: 90,//半径
+        innerR: 80,//内半径
+        currentNumber: 70,
+        totalNumber: 100,
+        color: '#7EC0EE',
+        fontSize: 18
+    });
+</script>
+</body>
+</html>

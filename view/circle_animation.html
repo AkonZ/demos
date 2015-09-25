@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>圆周运动</title>
+    <style>
+        .item{
+            width: 400px;
+            height: 460px;
+            float: left;
+        }
+        .box{
+            width: 0px;
+            height: 100px;
+            border-left: 1px solid #3295f2;
+            margin: 100px auto;
+            position: relative;
+            -webkit-backface-visibility: hidden;
+        }
+        .box:after{
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            bottom: 0;
+            left: -5px;
+            border-radius: 100%;
+            background-color: #3295f2;
+        }
+
+        .box.round{
+            transform-origin: left top;
+            -webkit-animation: round 1.4s linear infinite;
+        }
+        @-webkit-keyframes  round{
+            0%{
+               transform: rotate(0deg);
+            }
+            0%{
+                transform: rotate(360deg);
+            }
+        }
+
+        .box.arc{
+            transform-origin: left top;
+            -webkit-animation: arc 0.6s ease-in-out infinite alternate;
+        }
+        @-webkit-keyframes  arc{
+            0%{
+                transform: rotate(-45deg);
+            }
+            100%{
+                transform: rotate(45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="item">
+        <div class="box round"></div>
+    </div>
+    <div class="item">
+        <div class="box arc"></div>
+    </div>
+</body>
+</html>

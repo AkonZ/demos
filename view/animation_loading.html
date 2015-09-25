@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>CSS3 loading效果</title>
+    <style>
+        .box{
+            width: 70px;
+            height: 70px;
+            border-radius: 100%;
+            background-color: #3295f2;
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            margin: 40px auto;
+            /*transition: all 0.4s ease-in-out;*/
+            -webkit-animation: loading 0.8s 0.1s ease-in-out infinite;
+        }
+        @-webkit-keyframes loading {
+            from{
+                opacity: 1;
+                transform: scale(0.2);
+            }
+            to{
+                opacity: 0;
+                transform: scale(1.2);
+            }
+        }
+        .panel{
+            width: 70px;
+        }
+        .spin{
+            width: 6px;
+            height: 40px;
+            display: inline-block;
+            background-color: #3295f2;
+            -webkit-animation: spinAni 1.2s ease-in-out infinite;
+        }
+
+        .spin:nth-child(2){
+            -webkit-animation-delay: -1.1s;
+        }
+        .spin:nth-child(3){
+            -webkit-animation-delay: -1s;
+        }
+        .spin:nth-child(4){
+            -webkit-animation-delay: -0.9s;
+        }
+        .spin:last-child{
+            -webkit-animation-delay: -0.8s;
+        }
+        @-webkit-keyframes spinAni {
+            0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
+            20% { -webkit-transform: scaleY(1.0) }
+        }
+
+        .box1{
+            width: 60px;
+            height: 60px;
+            background-color: #67CF22;
+            margin-left: 100px;
+            -webkit-animation: animationBox1 1.5s ease-in-out 0.1s infinite;
+        }
+        @-webkit-keyframes animationBox1{
+            0%{
+                transform: rotatex(0deg) perspective(120px);
+            }
+            50%{
+                transform: rotatex(180deg) perspective(120px);
+            }
+            100%{
+                transform: rotatex(180deg) rotatey(180deg) perspective(120px);
+            }
+        }
+        .box2{
+            margin-left: 300px;
+            width: 60px;
+            height: 60px;
+            background-color: transparent;
+            border: 6px solid #f7f7f7;
+            border-left:6px solid #ff744d;
+            border-radius: 100%;
+            -webkit-animation: animationBox2 1s ease-out infinite;
+        }
+        @-webkit-keyframes animationBox2{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="panel">
+        <div class="spin"></div>
+        <div class="spin"></div>
+        <div class="spin"></div>
+        <div class="spin"></div>
+        <div class="spin"></div>
+    </div>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

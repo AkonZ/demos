@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>transform动画效果</title>
+    <style>
+        html{
+            background-color: #add8e6;
+            -webkit-animation: fadeIn 0.8s ease-in-out;
+            /*transition: opacity 0.2s ease;*/
+        }
+        img{
+            width: 350px;
+            position: absolute;
+            border: 8px solid #FFF;
+            border-radius: 3px;
+            backface-visibility: hidden;
+            transition: transform 0.5s ease-in-out 0.1s;
+            box-shadow: 3px 3px 3px rgba(173, 216, 230,0.2);
+        }
+        @-webkit-keyframes  fadeIn{
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+        .box{
+            width: 400px;
+            margin: 200px auto;
+            position: relative;
+        }
+        .img-1{
+            z-index: 10;
+            transform-origin: center bottom;
+            transform: rotate(-10deg);
+        }
+        .img-2{
+            z-index: 9;
+            transform-origin: center bottom;
+            transform: translatex(8px) rotate(-3deg);
+        }
+        .img-3{
+            z-index: 3;
+            transform-origin: center bottom;
+            transform:translatex(20px) rotate(2deg);
+        }
+        .box:hover > .img-1{
+            transform:translatex(-50px) rotate(-20deg);
+        }
+        .box:hover > .img-3{
+            transform:translatex(50px) rotate(20deg);
+        }
+        /*img:hover.img-3{*/
+            /*transform: rotate(10deg);*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="../img/img_1.jpg" alt="" class="img img-1"/>
+    <img src="../img/img_2.jpg" alt="" class="img img-2"/>
+    <img src="../img/img_3.jpg" alt="" class="img img-3"/>
+</div>
+</body>
+</html>

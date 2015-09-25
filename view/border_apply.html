@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>折角效果</title>
+    <style>
+        .box{
+            width: 0;
+            height: 0;
+            border-top: 60px solid #3295f2;
+            border-right: 60px solid #ff744d;
+            border-bottom: 60px solid #67CF22;
+            border-left: 60px solid #add8e6;
+        }
+        .img-layer{
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+        .img-layer:after{
+            position: absolute;
+            top: 0;
+            right: 0;
+            content: '';
+            width: 0;
+            height: 0;
+            border-color:rgba(0,0,0,0.2) #FFF;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.3),-1px 1px 1px rgba(0,0,0,0.2);
+            border-width: 0;
+            border-style: solid;
+            border-bottom-left-radius: 3px;
+            transition: all ease-in-out 0.3s;
+        }
+        .img-layer:hover:after{
+            border-width: 0 90px 90px 0;
+        }
+        .img-layer.max:after{
+           border-width: 0 1000px 1000px 0;
+            transition: all ease-in-out 1.6s
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="img-layer">
+        <img src="../img/img_2.jpg" alt=""/>
+    </div>
+    <script>
+        var layer = document.querySelector('.img-layer');
+        layer.addEventListener('click',function(){
+            this.className = 'img-layer max';
+        });
+    </script>
+</body>
+</html>
