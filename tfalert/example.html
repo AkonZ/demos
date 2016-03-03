@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="tf-popup.css"/>
+</head>
+<body>
+    <div id="test"></div>
+    <script src="zepto.min.js"></script>
+    <script src="tf-popup.js"></script>
+    <script>
+        $('#test').tfpop({
+            title: '信息费支付成功！请尽快联系货主准备装货',
+            open: true,
+            footer: [{
+                text: '我知道了',
+                click: function(){
+                    alert('close');
+                }
+            }]
+        });
+    </script>
+</body>
+</html>

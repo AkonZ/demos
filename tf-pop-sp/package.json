@@ -1,0 +1,8 @@
+{
+	"tag": "弹出框",
+	"title": "易配货App弹出框",
+	"type": "mobile",
+	"description": "依据最新UI设计稿、解决1px边框问题、和老版本tf-pop使用稍有区别",
+	"author": "XieZhendong",
+	"html": "/widget/tf-pop-sp/example.html"
+}

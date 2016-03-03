@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 400px;
+            height: 400px;
+            background-color: #3295f2;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body>
+
+<img src="../img/img_1.jpg" alt="" draggable="true"/>
+<div class="box"></div>
+<script>
+    var img = document.querySelector('img'),
+        box = document.querySelector('.box');
+    img.addEventListener('dragstart', function (ev) {
+        console.log('start');
+        var dataTransfer = ev.dataTransfer;
+        dataTransfer.setData('text','ssjbdbd');
+        console.log(dataTransfer);
+    },false);
+    box.addEventListener('dragenter',function(ev){
+        console.log('enter');
+        var dataTransfer = ev.dataTransfer;
+        console.log(dataTransfer);
+        var url = dataTransfer.getData('text') || dataTransfer.getData('text/uri-list')||dataTransfer.getData('Text');
+        console.log(url);
+    },false);
+</script>
+</body>
+</html>

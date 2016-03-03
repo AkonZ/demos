@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>简易饼状图</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script src="simplePie.js"></script>
+    <script>
+        var pie = new SimplePieChart('canvas');
+        pie.init({
+            innerR: 78,//内环半径        
+            R: 85,//外环半径
+        });
+        
+
+        //设置数据
+        pie.setOption({
+            currentNumber: 70,
+            totalNumber: 100,
+            color: '#00cc5b',
+            unit: '分钟',
+            tipText: '剩余免费电话时长'
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box1,
+        .box2{
+            width: 100px;
+            height: 100px;
+        }
+        .box1{
+            background-color: #add8e6;
+            -webkit-animation-name: move;
+            -webkit-animation-duration: 3s;
+            -webkit-animation-delay: 1s;
+            -webkit-animation-iteration-count: infinite;
+
+            -moz-animation-name: move;
+            -moz-animation-duration: 3s;
+            -moz-animation-delay: 1s;
+            -moz-animation-iteration-count: infinite;
+            /*-webkit-animation-direction: alternate;*/
+            /*-webkit-animation-fill-mode: forwards;*/
+        }
+        .box2{
+            background-color: #3295f2;
+            -webkit-animation-name: move;
+            -webkit-animation-duration: 3s;
+            -webkit-animation-delay: 3s;
+            -webkit-animation-iteration-count: infinite;
+        }
+        @-webkit-keyframes move{
+            0%{
+                margin-left: 0;
+                margin-top: 0;
+            }
+            50%{
+                margin-left: 800px;
+                margin-top: 300px;
+            }
+            50%{
+                margin-left: 200px;
+            }
+            100%{
+                margin-left: 800px;
+                margin-top: 100px;
+            }
+        }
+        @-moz-keyframes move{
+            0%{
+                margin-left: 0;
+                background-color: #3295f2;
+                margin-top: 0;
+            }
+            50%{
+                margin-left: 800px;
+                background-color: #67CF22;
+                margin-top: 100px;
+            }
+            50%{
+                margin-left: 200px;
+            }
+            100%{
+                margin-left: 800px;
+                background-color: #ff744d;
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <!--<div class="box2"></div>-->
+</body>
+</html>

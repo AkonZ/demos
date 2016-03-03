@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 60px;
+            height: 60px;
+            background-color: #add8e6;
+        }
+        .box1{
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: #add8e6;
+            z-index: 3;
+        }
+        .box3{
+            left: 20px;
+            top: 20px;
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: #67CF22;
+            z-index: 2;
+        }
+        .box2{
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #0082CB;
+            z-index: 1;
+            transition: all 3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <script>
+        setTimeout(function(){
+            document.querySelector('.box2').style.zIndex = 4;
+        },2000);
+    </script>
+</body>
+</html>

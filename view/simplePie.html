@@ -38,6 +38,7 @@
             ctx.arc(arc.x, arc.y,arc.radius, arc.startAngle,arc.endAngle,false);
             ctx.lineWidth =  arc.lineWidth;
             ctx.strokeStyle = arc.color;
+            console.log(arc.x,arc.y,this.arc.lineWidth,this.arc.radius);
             ctx.stroke();
         }
 
@@ -53,8 +54,10 @@
 
             canvas.setAttribute('width',canvasWidth + 'px');
             canvas.setAttribute('height',canvasWidth + 'px');
-            canvas.style.width = canvasWidth / 4 + 'px';
-            canvas.style.hight = canvasWidth / 4 + 'px';
+//            canvas.style.width = canvasWidth / 4 + 'px';
+//            canvas.style.width = canvasWidth / 4 + 'px';
+            canvas.style.width = canvasWidth  + 'px';
+            canvas.style.hight = canvasWidth  + 'px';
 
             var ctx = null;
             if (canvas.getContext) {
@@ -89,6 +92,10 @@
 //            this.arc.endAngle = Math.PI*(3/2 + percentage * 2);
             this.arc.endAngle = this.arc.startAngle + Math.PI*2*percentage;
 
+//            this.drawCircle();
+
+            this.arc.radius -= 10;
+            this.arc.lineWidth += 10;
             this.drawCircle();
 
             return this;
@@ -112,19 +119,19 @@
         innerR: 80,//内半径
         currentNumber: 40,
         totalNumber: 100,
-        color: '#ff744d',
+        color: '#00cc5b',
         fontSize: 18
     });
 
-    var spc2 = new SimplePieChart('canvas2');
-    spc2.setOption({
-        R: 90,//半径
-        innerR: 80,//内半径
-        currentNumber: 70,
-        totalNumber: 100,
-        color: '#7EC0EE',
-        fontSize: 18
-    });
+//    var spc2 = new SimplePieChart('canvas2');
+//    spc2.setOption({
+//        R: 90,//半径
+//        innerR: 80,//内半径
+//        currentNumber: 70,
+//        totalNumber: 100,
+//        color: '#7EC0EE',
+//        fontSize: 18
+//    });
 </script>
 </body>
 </html>

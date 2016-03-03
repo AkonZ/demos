@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul,li{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style-type: none;
+        }
+        .img{
+            width: 200px;
+            vertical-align: top;
+        }
+        .abs{
+            position: absolute;
+        }
+        .box{
+            position: absolute;
+            top: 300px;
+        }
+
+        .ad-key{
+            width: 160px;
+            height: 28px;
+            outline: none;
+        }
+        .ad-key:focus{
+            outline: none;
+        }
+        .ad-panel{
+            position: absolute;
+            z-index: 100;
+            display: none;
+            width: 165px;
+            height: 100px;
+            border: 1px solid #dfdfdf;
+            background-color: #fff;
+        }
+        .ad-panel li{
+            padding: 8px;
+            font-style: 12px;
+        }
+        .ad-panel li:hover{
+            background-color: #dfdfdf;
+        }
+        .box-1{
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="imgbox"> 
+         <img src="../img/1.jpg" alt="" class="img">
+         <img src="../img/sg-img.png" alt="" class="img">
+         <img src="../img/2.png" alt="" class="img">
+    </div>
+   
+    <div class="box">
+        <input type="text" placeholder="输入序号" id="number">
+        <button id="btn">添加absolute</button>
+        <button id="reset">重置</button>
+    </div>
+
+    <!-- 随意改变输入框大小，panel位置下拉面板位置保持良好 -->
+    <div class="box-1">
+        <div class="ad-area">
+            <input type="text" name="" id="" placeholder="请输入车长..." class="ad-key"> 
+            <ul class="ad-panel">
+                <li>1.2米</li>
+                <li>1.3米</li>
+                <li>1.4米</li>
+            </ul>  
+        </div>  
+    </div>
+    
+
+    <script>
+        var imgs = document.querySelectorAll('.img'),
+            number = document.querySelector('#number'),
+            reset = document.querySelector('#reset')
+            btn1 = document.querySelector('#btn1'),
+            imgbox = document.querySelector('.imgbox');
+
+        btn.onclick = function(){
+            var n = number.value - 1;
+            imgs[n].style.position = 'absolute';
+        }
+        reset.onclick = function(){
+            var n = number.value - 1;
+            imgs[n].style.position = 'static';
+            imgbox.style.position = 'static';
+        }
+
+        var  key = document.querySelector('.ad-key'),
+             panel = document.querySelector('.ad-panel');
+        key.oninput = function(){
+            var v = this.value;
+            if(v)
+                panel.style.display = 'block';
+            else
+                panel.style.display = 'none';    
+        }
+    </script>
+</body>
+</html>

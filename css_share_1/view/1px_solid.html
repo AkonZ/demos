@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>1px border</title>
+    <style>
+        .thin-border {
+            position: relative;
+        }
+
+        .thin-border:after {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            width: 200%;
+            height: 200%;
+            -webkit-transform: scale(.5);
+            transform: scale(.5);
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+        }
+
+        .thin-border-top:after {
+            border-top: 1px solid #DFDFDF;
+        }
+
+        .thin-border-right:after {
+            border-right: 1px solid #DFDFDF;
+        }
+
+        .thin-border-bottom:after {
+            border-bottom: 1px solid #DFDFDF;
+        }
+
+        .thin-border-left:after {
+            border-left: 1px solid #DFDFDF;
+        }
+
+        .thin-border-all:after {
+            border: 1px solid #DFDFDF;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

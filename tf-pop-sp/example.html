@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title></title>
+    <link rel="stylesheet" href="tf-pop-sp.css"/>
+</head>
+<body>
+<!--<div class="pop-cover">-->
+<!--<div class="tf-pop">-->
+<!--<div class="pop-content">-->
+<!--<div class="pop-title">支付信息费成功</div>-->
+<!--<p class="pop-text has-title">请尽快请联系货主准备装货</p>-->
+<!--</div>-->
+<!--<div class="pop-footer thin-border thin-border-top">-->
+<!--<div class="pop-btn w50">取消</div>-->
+<!--<div class="pop-btn w50 thin-border thin-border-left">确定</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<pre>
+依据易配货h5最新设计图，后续需要添加弹出框类型统一更新
+解决1px边框问题
+与之前老版本的tfpop略有差别
+</pre>
+
+<ul>
+    <li class="tfpop-li thin-border thin-border-bottom">18767135721</li>
+    <li class="tfpop-li thin-border thin-border-bottom">037769590854</li>
+</ul>
+
+<button id="btn1">带有标题及内容</button>
+<br />
+<button id="btn2">不带标题，强调内容</button>
+
+<script src="zepto.min.js"></script>
+<script src="tf-popup-sp.js"></script>
+<script>
+    $('#btn1').on('click', function () {
+        $.tfpop({
+            title: '支付信息费',
+            content: '支付信息费前先绑定手机号码奥',
+            coverClick: false,//点击背景是否关闭弹窗，默认为false
+            footer: [
+                {
+                    text: '偏不绑'
+                },
+                {
+                    text: '马上去绑',
+                    click: function () {
+                        alert('点击确认事件');
+                    }
+                }
+            ]
+        });
+    });
+	
+	
+	
+    $('#btn2').on('click', function () {
+        $.tfpop({
+            content: '号码为<strong>18767135623</strong>,请尽快联系',//strong标签用于强调
+            coverClick: true,//
+            footer: [
+                {
+                    text: '偶知道了'
+                }
+            ]
+        });
+    });
+	
+//	$('#btn1').trigger('click');
+    var str = '<div class="tfpop-ul"><a class="tfpop-li thin-border thin-border-bottom" href="tel:18767135721">18767135721</a><a class="tfpop-li thin-border">037769590854</a></div>'
+    $.tfpop({
+        content: str,
+        coverClick: false//点击背景是否关闭弹窗，默认为false
+    });
+</script>
+</body>
+</html>

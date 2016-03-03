@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /*common:begin*/
+        .thin-border {
+            position: relative;
+        }
+
+        .thin-border:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200%;
+            height: 200%;
+            border-bottom: 1px solid #dfdfdf;
+            -webkit-transform: scale(.5);
+            transform: scale(.5);
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+        }
+
+        /*common:end*/
+        .box1 {
+            width: 100px;
+            height: 20px;
+            border-bottom: 20px solid #3295f2;
+            background-color: #3295f2;
+            -webkit-animation: scaleAni 3s ease infinite alternate;
+            -moz-animation: scaleAni 3s ease infinite alternate;
+            animation: scaleAni 3s ease infinite alternate;
+        }
+
+        @-webkit-keyframes scaleAni {
+            0% {
+                -webkit-transform: scaleY(1);
+            }
+            100% {
+                -webkit-transform: scaleY(0);
+            }
+        }
+
+        @-moz-keyframes scaleAni {
+            0% {
+                -moz-transform: scaleY(1);
+            }
+            100% {
+                -moz-transform: scaleY(0);
+            }
+        }
+
+        @keyframes scaleAni {
+            0% {
+                transform: scaleY(1);
+            }
+            100% {
+                transform: scaleY(0);
+            }
+        }
+
+        .box {
+            margin: 100px;
+            width: 200px;
+            height: 200px;
+        }
+        .box:after{
+            border: 1px solid #dfdfdf;
+            border-radius: 30px;
+        }
+        .circle{
+            width: 100px;
+            height: 100px;
+        }
+        .circle:after{
+            border: 1px solid;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box thin-border"></div>
+<div class="circle thin-border"></div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            overflow:hidden;
+            height:19px;
+            text-align:justify;
+        }
+        div:after{
+            display:inline-block;
+            content:'';
+            overflow:hidden;
+            width:100%;
+            height:0;
+        }
+        p{
+            background-color: #3295f2;
+            width: 60%;
+            color: #FFF;
+        }
+        /*.box1{*/
+            /*text-align: justify;*/
+        /*}*/
+        /*.box2{*/
+            /*text-align: center;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div class="box1">1.当设置body{text-align:center;} </div>
+
+<div class="box2">1.当设置body{text-align:center;}。 在IE中，段落P，图片img同时实现了居中对齐，也就是说text-align:center;同时作用于元素p与元素img。 在FF中，段落P，没有能实现居中对齐，而图片img实现了居中对齐，也就是说text-align:center;作用于img标签，而段落p标签没有起到居中的作用。
+    2.当设置段落 p {margin:0 aut</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /*.box{*/
+        /*width: 33.3%;*/
+        /*height: 40px;*/
+        /*float: left;*/
+        /*background-color: #be3948;*/
+        /*}*/
+        .box:nth-child(even) {
+            background-color: #3295f2;
+        }
+
+        .box:nth-child(odd) {
+            background-color: #be3948;
+        }
+
+        .box {
+            display: inline-block;
+            letter-spacing: 0;
+            vertical-align: top;
+            width: 33.3%;
+            height: 60px;
+            word-spacing: normal;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+</body>
+</html>
