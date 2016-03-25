@@ -7,7 +7,7 @@ require.config({
     shim:{
         'log':{
             deps: ['jquery'],
-            exports: 'log'
+            exports: 'writeLog'
         }
     }
 });
